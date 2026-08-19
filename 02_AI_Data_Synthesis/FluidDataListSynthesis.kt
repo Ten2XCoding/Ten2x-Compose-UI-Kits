@@ -97,7 +97,7 @@ fun FluidDataListSynthesis() {
                 val centerOffset = Offset(finalX, finalY)
                 // (IMPROVEMENT 1) Cyberpunk Glow Effect: Drawing a faded radial gradient behind the dot
                 val glowRadius = particle.radius * 4f
-                if (alpha > 0f) { // Sirf tabhi glow draw karein jab dot dikh raha ho
+                if (alpha > 0f) { 
                     drawCircle(
                         brush = Brush.radialGradient(
                             colors = listOf(particle.color.copy(alpha = alpha * 0.5f), Color.Transparent),
@@ -143,7 +143,7 @@ fun FluidDataListSynthesis() {
                 Pair("Generated Knowledge Unit", "Deep Learning Matrix Active"),
                 Pair("Neural Network Node", "Status: Optimal")
             )
-            // (IMPROVEMENT 2) Staggered Loop: Har card apne index ke hisaab se delay lega
+            // (IMPROVEMENT 2) Staggered Loop:
             aiResults.forEachIndexed { index, data ->
                 AnimatedVisibility(
                     visible = isDataReady,
@@ -159,10 +159,10 @@ fun FluidDataListSynthesis() {
                 }
             }
             Spacer(modifier = Modifier.height(30.dp))
-            // Reset Button (Sabse aakhir mein aayega)
+        
             AnimatedVisibility(
                 visible = isDataReady,
-                enter = fadeIn(tween(600, delayMillis = 800)) // Sabse zyada delay
+                enter = fadeIn(tween(600, delayMillis = 800)) 
             ) {
                 Text(
                     text = "RESET MATRIX",
